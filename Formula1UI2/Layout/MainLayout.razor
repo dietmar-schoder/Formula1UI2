@@ -1,0 +1,54 @@
+﻿@inherits LayoutComponentBase
+
+<div class="page">
+    <main>
+        <article>
+            <MatAppBarContainer>
+                <MatAppBar Fixed="true">
+                    <MatAppBarRow>
+                        <MatAppBarSection>
+                            <MatIconButton Icon="menu" @onclick="OnMenuClick"></MatIconButton>
+                            <MatAppBarTitle>Formula 1 APIs</MatAppBarTitle>
+                        </MatAppBarSection>
+                        <MatAppBarSection Align="@MatAppBarSectionAlign.End">
+                            @if (isAuthenticated)
+                            {
+                                <MatButton Unelevated="true" @onclick="HandleLogout">Logout</MatButton>
+                            }
+                            else
+                            {
+                                <MatButton Unelevated="true" @onclick="HandleLoginOpen">Login</MatButton>
+                                <MatButton Unelevated="true" @onclick="HandleRegisterOpen">Register</MatButton>
+                            }
+                        </MatAppBarSection>
+                    </MatAppBarRow>
+                </MatAppBar>
+                <MatAppBarContent>
+                    @Body
+                </MatAppBarContent>
+            </MatAppBarContainer>
+        </article>
+    </main>
+</div>
+@* <MatDialog @bind-Open="openLoginDialog">
+    <MatDialogTitle>Login</MatDialogTitle>
+    <MatDialogContent>
+        <!-- Your login form goes here -->
+    </MatDialogContent>
+    <MatDialogActions>
+        <MatButton @onclick="HandleLoginSubmit" Color="Color.Primary">Login</MatButton>
+        <MatButton @onclick="HandleLoginClose" Color="Color.Secondary">Cancel</MatButton>
+    </MatDialogActions>
+</MatDialog>
+
+<MatDialog @bind-Open="openRegisterDialog">
+    <MatDialogTitle>Register</MatDialogTitle>
+    <MatDialogContent>
+        <!-- Your register form goes here -->
+    </MatDialogContent>
+    <MatDialogActions>
+        <MatButton @onclick="HandleRegisterSubmit" Color="Color.Primary">Register</MatButton>
+        <MatButton @onclick="HandleRegisterClose" Color="Color.Secondary">Cancel</MatButton>
+    </MatDialogActions>
+</MatDialog>
+ *@

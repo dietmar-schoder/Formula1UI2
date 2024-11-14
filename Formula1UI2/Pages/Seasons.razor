@@ -1,0 +1,14 @@
+﻿@page "/seasons"
+
+<MatH2>Seasons</MatH2>
+<MatPaginator Length="@seasonsPaginated.TotalCount" PageSize="@seasonsPaginated.PageSize" Page="@OnPage"></MatPaginator>
+<MatList>
+    @foreach (var season in seasonsPaginated.Seasons)
+    {
+        <MatListItem>
+            <MatButtonLink Href=@($"/seasons/{season.Year}")>
+                @season.Year
+            </MatButtonLink>
+        </MatListItem>
+    }
+</MatList>

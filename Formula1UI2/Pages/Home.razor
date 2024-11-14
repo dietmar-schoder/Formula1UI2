@@ -1,0 +1,27 @@
+﻿@page "/"
+@using MatBlazor
+
+<MatH2>Formula 1 APIs</MatH2>
+    
+<MatBody1>Welcome to the most accurate Formula 1 data!</MatBody1>
+
+<MatList>
+    @foreach (var item in menuItems)
+    {
+        <MatListItem>
+            <MatButtonLink Href="@item.Path">
+                @item.Label
+            </MatButtonLink>
+        </MatListItem>
+    }
+</MatList>
+
+<MatDivider></MatDivider>
+<MatList>
+    <MatListItem>
+        <MatButtonLink Href="@apiUrl" Outlined="true" Target="_blank">API documentation</MatButtonLink>
+    </MatListItem>
+    <MatListItem>
+        <MatButtonLink Href="https://github.com/dietmar-schoder/Formula1" Outlined="true" Target="_blank">GitHub repository</MatButtonLink>
+    </MatListItem>
+</MatList>
